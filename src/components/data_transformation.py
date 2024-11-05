@@ -68,7 +68,7 @@ class DataTransformation:
             logging.info("Read train and test data completed")
 
             # Drop unnecessary columns
-            columns_to_drop = ["Name", "Ticket", "Cabin"]
+            columns_to_drop = ["Name", "Ticket", "Cabin","PassengerId"]
             train_df = train_df.drop(columns=columns_to_drop, errors='ignore')
             test_df = test_df.drop(columns=columns_to_drop, errors="ignore")
 
@@ -78,7 +78,7 @@ class DataTransformation:
 
             # Define target column and identify feature columns
             target_column_name = "Survived"
-            numerical_columns = ["PassengerId", "Pclass", "Age", "SibSp", "Parch", "Fare"]
+            numerical_columns = ["Pclass", "Age", "SibSp", "Parch", "Fare"]
 
             # Dynamically identify categorical columns (non-numeric) after dropping columns
             categorical_columns = [col for col in train_df.columns if train_df[col].dtype == "object" and col not in [target_column_name]]
