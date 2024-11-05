@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 from config.insert_data import insert_titanic_data
+from src.logger import logging
 
 # Set up Streamlit page configuration with an icon
 st.set_page_config(page_title="🚢 Titanic Survival Prediction", layout="centered", page_icon="🚢")
@@ -10,6 +11,7 @@ st.set_page_config(page_title="🚢 Titanic Survival Prediction", layout="center
 st.title("🚢 Titanic Survival Prediction App")
 st.write("Will you survive the Titanic disaster? Enter passenger details to find out! 🧭")
 
+logging.info("Code is in Streamlit web page")
 # Add a background color and style the layout
 st.markdown(
     """
@@ -81,3 +83,5 @@ st.write(
 )
 st.markdown("<hr style='border-top: 2px solid #eee;'>", unsafe_allow_html=True)
 st.write("📝 Created with Streamlit | Made for fun Titanic Survival Predictions 🚢")
+
+logging.info("Streamlit output is shown and code work succesfully ")
