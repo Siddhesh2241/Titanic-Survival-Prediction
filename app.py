@@ -49,12 +49,12 @@ def predict_datapoint():
         print(pred_df)
 
         predict_pipeline = PredictPipeline()
-        Precition =  predict_pipeline.predict(pred_df)
+        Predicition =  predict_pipeline.predict(pred_df)
 
-        
+        results = "Survived" if Predicition[0] == 1 else "Did not survived"
        # insert_student_data(int(PassengerId), int(Pclass), int(Age),  
        #                     int(SibSp), int(Parch), int(Fare),Sex, Embarked, int(results[0]))
-        return render_template("home.html",results=results[0])
+        return render_template("home.html",results=results)
     
 
 if __name__ == "__main__":
