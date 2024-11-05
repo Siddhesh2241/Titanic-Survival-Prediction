@@ -10,7 +10,7 @@ class PredictPipeline:
     def Predict(self,features):
         try:
             model_path = "artifacts\model.pkl"
-            preprocessor_path =  'artifacts\Preprocessor.pkl'
+            preprocessor_path = 'artifacts\preprocessor.pkl'
             model = load_object(file_path=model_path)
             preprocessor = load_object(file_path=preprocessor_path)
 
@@ -23,7 +23,7 @@ class PredictPipeline:
             raise CustomException(e,sys)
         
     
-    class CustomData:
+class CustomData:
         def __init__(self,
                     PassengerId:int,
                     Pclass:int,
@@ -54,7 +54,9 @@ class PredictPipeline:
                        "Fare":[self.Fare],
                        "Sex": [self.Sex],
                        "Embarked": [self.Embarked]
-                  }
+                    }
+
+                  return pd.DataFrame(custom_data_input_dict)
 
              except Exception as e:
                   raise CustomException(e,sys)

@@ -22,12 +22,11 @@ def predict_datapoint():
     else:
         # Retrieve form data
 
-        PassengerId =float(request.form.get('PassengerId'))
-        Pclass = float(request.form.get('Pclass'))
-        Age = float(request.form.get('Age'))
-        lunch = float(request.form.get('lunch'))
-        SibSp = float(request.form.get('SibSp'))
-        Parch = float(request.form.get('Parch'))
+        PassengerId =int(request.form.get('PassengerId'))
+        Pclass = int(request.form.get('Pclass'))
+        Age = int(request.form.get('Age'))
+        SibSp = int(request.form.get('SibSp'))
+        Parch = int(request.form.get('Parch'))
         Fare = float(request.form.get('Fare'))
         Sex = request.form.get("Sex")
         Embarked = request.form.get("Embarked")
@@ -35,15 +34,14 @@ def predict_datapoint():
         # Use the data to make a prediction
 
         data =  CustomData(
-            PassengerId =float(request.form.get('PassengerId')),
-            Pclass = float(request.form.get('Pclass')),
-            Age = float(request.form.get('Age')),
-            lunch = float(request.form.get('lunch')),
-            SibSp = float(request.form.get('SibSp')),
-            Parch = float(request.form.get('Parch')),
+            PassengerId =int(request.form.get('PassengerId')),
+            Pclass = int(request.form.get('Pclass')),
+            Age = int(request.form.get('Age')),
+            SibSp = int(request.form.get('SibSp')),
+            Parch = int(request.form.get('Parch')),
             Fare = float(request.form.get('Fare')),
             Sex = request.form.get("Sex"),
-            Embarked = request.form.get("Embarked"),
+            Embarked = request.form.get("Embarked")
 
         )
 
@@ -53,7 +51,7 @@ def predict_datapoint():
         predict_pipeline = PredictPipeline()
         results =  predict_pipeline.predict(pred_df)
 
-       # insert_student_data(int(PassengerId), int(Pclass), int(Age), int(lunch), 
+       # insert_student_data(int(PassengerId), int(Pclass), int(Age),  
        #                     int(SibSp), int(Parch), int(Fare),Sex, Embarked, int(results[0]))
         return render_template("home.html",results=results[0])
     
