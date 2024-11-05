@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
-from config.Insert_data import insert_student_data
+#from config.Insert_data import insert_student_data
 
 application = Flask(__name__)
 
@@ -53,8 +53,8 @@ def predict_datapoint():
         predict_pipeline = PredictPipeline()
         results =  predict_pipeline.predict(pred_df)
 
-        insert_student_data(int(PassengerId), int(Pclass), int(Age), int(lunch), 
-                            int(SibSp), int(Parch), int(Fare),Sex, Embarked, int(results[0]))
+       # insert_student_data(int(PassengerId), int(Pclass), int(Age), int(lunch), 
+       #                     int(SibSp), int(Parch), int(Fare),Sex, Embarked, int(results[0]))
         return render_template("home.html",results=results[0])
     
 

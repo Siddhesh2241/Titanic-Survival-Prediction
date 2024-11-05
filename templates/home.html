@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survival Prediction</title>
+    <!-- Linking CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Titanic Survival Prediction</h1>
+
+        <form action="{{ url_for('predict_datapoint') }}" method="post">
+            <legend>Passenger Information</legend>
+
+            <div class="mb-3">
+                <label class="form-label">Passenger ID</label>
+                <input type="number" class="form-control" name="PassengerId" placeholder="Enter Passenger ID" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Pclass</label>
+                <input type="number" class="form-control" name="Pclass" placeholder="Enter Passenger Class (1, 2, or 3)" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Age</label>
+                <input type="number" class="form-control" name="Age" placeholder="Enter Age" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Lunch Type</label>
+                <select class="form-control" name="lunch" required>
+                    <option selected disabled value="">Select Lunch Type</option>
+                    <option value="1">Free/Reduced</option>
+                    <option value="0">Standard</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Number of Siblings/Spouses Aboard (SibSp)</label>
+                <input type="number" class="form-control" name="SibSp" placeholder="Enter SibSp" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Number of Parents/Children Aboard (Parch)</label>
+                <input type="number" class="form-control" name="Parch" placeholder="Enter Parch" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Fare</label>
+                <input type="number" class="form-control" name="Fare" placeholder="Enter Fare Amount" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Sex</label>
+                <select class="form-control" name="Sex" required>
+                    <option selected disabled value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Port of Embarkation</label>
+                <select class="form-control" name="Embarked" required>
+                    <option selected disabled value="">Select Port</option>
+                    <option value="C">Cherbourg</option>
+                    <option value="Q">Queenstown</option>
+                    <option value="S">Southampton</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Predict Survival">
+            </div>
+        </form>
+
+        <h2>The predicted survival status is: {{ results }}</h2>
+    </div>
+</body>
+</html>
