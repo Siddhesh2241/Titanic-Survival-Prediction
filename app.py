@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
-#from config.Insert_data import insert_student_data
+from config.insert_data import insert_titanic_data
 
 application = Flask(__name__)
 
@@ -52,8 +52,8 @@ def predict_datapoint():
         Predicition =  predict_pipeline.predict(pred_df)
 
         results = "Survived" if Predicition[0] == 1 else "Did not survived"
-       # insert_student_data(int(PassengerId), int(Pclass), int(Age),  
-       #                     int(SibSp), int(Parch), int(Fare),Sex, Embarked, int(results[0]))
+        insert_titanic_data(int(Pclass), int(Age),  
+                            int(SibSp), int(Parch), float(Fare),Sex, Embarked, int(Predicition[0]))
         return render_template("home.html",results=results)
     
 
