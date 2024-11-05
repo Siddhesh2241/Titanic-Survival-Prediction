@@ -25,7 +25,7 @@ class PredictPipeline:
     
 class CustomData:
         def __init__(self,
-                    PassengerId:int,
+                    #PassengerId:int,
                     Pclass:int,
                     Age:int,
                     SibSp:int,
@@ -34,7 +34,7 @@ class CustomData:
                     Sex:str,
                     Embarked:str  ):
         
-                    self.PassengerId = PassengerId
+                    #self.PassengerId = PassengerId
                     self.Pclass = Pclass
                     self.Age = Age
                     self.SibSp = SibSp
@@ -46,7 +46,7 @@ class CustomData:
         def get_data_as_data_frame(self):
              try:
                   custom_data_input_dict = {
-                       "PassengerId" : [self.PassengerId],
+                       #"PassengerId" : [self.PassengerId],
                        "Pclass": [self.Pclass],
                        "Age":[self.Age],
                        "SibSp":[self.SibSp],
