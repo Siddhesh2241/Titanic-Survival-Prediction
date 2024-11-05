@@ -108,7 +108,7 @@ class ModelTrainer:
 
             Accuracy = accuracy_score(y_test,predicted)
 
-            return Accuracy,best_model_name
+            return Accuracy
         
         except Exception as e:
             raise CustomException(e,sys)
