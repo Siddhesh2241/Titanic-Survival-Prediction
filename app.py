@@ -22,7 +22,7 @@ def predict_datapoint():
     else:
         # Retrieve form data
 
-        PassengerId =int(request.form.get('PassengerId'))
+        #PassengerId =int(request.form.get('PassengerId'))
         Pclass = int(request.form.get('Pclass'))
         Age = int(request.form.get('Age'))
         SibSp = int(request.form.get('SibSp'))
@@ -34,7 +34,7 @@ def predict_datapoint():
         # Use the data to make a prediction
 
         data =  CustomData(
-            PassengerId =int(request.form.get('PassengerId')),
+            #PassengerId =int(request.form.get('PassengerId')),
             Pclass = int(request.form.get('Pclass')),
             Age = int(request.form.get('Age')),
             SibSp = int(request.form.get('SibSp')),
