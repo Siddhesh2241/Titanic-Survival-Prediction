@@ -51,6 +51,7 @@ project_root/
 
 ![Prediction Page](Images/After.png)
 
+* Streamlit web Prediction page 
 ![Streamlit_Prediction](Images/Stream.png)
 
 **📦 Getting Started**
@@ -63,7 +64,7 @@ project_root/
 
 * Clone the repo:
    ```bash
-   git clone https://github.com/YourUsername/titanic-survival-prediction.git
+   git clone https://github.com/Siddhesh2241/titanic-survival-prediction.git
    cd titanic-survival-prediction
    ```
 * Install dependencies:
