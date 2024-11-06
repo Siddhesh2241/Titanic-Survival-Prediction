@@ -128,23 +128,3 @@ from sklearn.model_selection import GridSearchCV
                 }
               }
 ```
-
-**🌍 Usage**
-
-* Open your browser and go to http://127.0.0.1:5000.
-* Fill in details like passenger class, age, fare, gender, and embarkation.
-* Click on Predict Survival to get an instant prediction.
-
-**🤖 Future Enhancements**
-
-* Add More Models: Incorporate advanced models like XGBoost and CatBoost for improved accuracy.
-* User Authentication: Add user login to save individual predictions.
-* Enhanced UI/UX: Improve the frontend with better design and interactive visualizations.
-
-**📝 License**
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-**🎉 Thank you for checking out this project! 🎉**
-
-Feel free to open an issue or pull request if you'd like to contribute.
