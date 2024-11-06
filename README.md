@@ -90,41 +90,15 @@ Run model training with hyperparameter tuning by configuring parameters in train
 ```bash
 from sklearn.model_selection import GridSearchCV
 
- parms = {
+param_grid = {
+    'RandomForestClassifier': {
+        'n_estimators': [100, 200, 300],
+        'max_depth': [10, 20, None]
+    },
+    'SVC': {
+        'C': [0.1, 1, 10],
+        'kernel': ['linear', 'rbf']
+    }
+}
 
-                "Decision Tree": {
-                'max_depth': [None, 10, 20, 30, 40, 50],
-            
-                 },
-                "KNeighbors": {
-                'n_neighbors': [3, 5, 7, 9],
-                'weights': ['uniform', 'distance'],
-                'metric': ['euclidean', 'manhattan']
-                 },
-                "LogisticRegression": {
-               
-                'C': [0.01, 0.1, 1, 10, 100]
-              
-                 },
-               "Support Vector Machine": {
-               'C': [0.1, 1, 10, 100],
-               'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
-               'gamma': ['scale', 'auto']
-                },
-               "RandomForestClassifier": {
-               'n_estimators': [100, 200, 300, 400],
-               'max_depth': [None, 10, 20, 30]
-            
-                },
-               "BaggingClassifier": {
-               'n_estimators': [10, 50, 100],
-                },
-               "AdaBoostClassifier": {
-               'n_estimators': [50, 100, 150],
-               'learning_rate': [0.01, 0.1, 1.0, 1.5]
-                },
-               "XGBClassifier": {
-               'n_estimators': [50, 100, 200],
-                }
-              }
 ```
