@@ -49,10 +49,36 @@ project_root/
 
 ![Home Page Screenshot](Images/Before.png)
 
-![Prediction Page](Images/after.png)
+![Prediction Page](Images/After.png)
+
+![Streamlit_Prediction](Images/Stream.png)
 
 **📦 Getting Started**
 
 **Prerequisites**
 * Install Python >= 3.7
 * Install Docker (optional, for containerized deployment)
+
+**Installation**
+
+* Clone the repo:
+   ```bash
+   git clone https://github.com/YourUsername/titanic-survival-prediction.git
+   cd titanic-survival-prediction
+   ```
+* Install dependencies:
+  ```bash
+  pip install -r requirements.txt
+  ```
+* Run the app:
+  ```bash
+  python app.py
+  ```
+* Run the Streamlit app: Navigate to the Streamlit directory and run:
+  ```bash
+  streamlit run Streamlit\TitanicWeb.py
+  ```
+* Calculate Prediction using streamlit web page
+  ```bash
+  streamlit run Streamlit\Predict.py
+  ```
