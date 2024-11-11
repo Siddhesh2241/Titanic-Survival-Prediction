@@ -90,41 +90,34 @@ Run model training with hyperparameter tuning by configuring parameters in train
 ```bash
 from sklearn.model_selection import GridSearchCV
 
- parms = {
+param_grid = {
+    'RandomForestClassifier': {
+        'n_estimators': [100, 200, 300],
+        'max_depth': [10, 20, None]
+    },
+    'SVC': {
+        'C': [0.1, 1, 10],
+        'kernel': ['linear', 'rbf']
+    }
+}
 
-                "Decision Tree": {
-                'max_depth': [None, 10, 20, 30, 40, 50],
-            
-                 },
-                "KNeighbors": {
-                'n_neighbors': [3, 5, 7, 9],
-                'weights': ['uniform', 'distance'],
-                'metric': ['euclidean', 'manhattan']
-                 },
-                "LogisticRegression": {
-               
-                'C': [0.01, 0.1, 1, 10, 100]
-              
-                 },
-               "Support Vector Machine": {
-               'C': [0.1, 1, 10, 100],
-               'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
-               'gamma': ['scale', 'auto']
-                },
-               "RandomForestClassifier": {
-               'n_estimators': [100, 200, 300, 400],
-               'max_depth': [None, 10, 20, 30]
-            
-                },
-               "BaggingClassifier": {
-               'n_estimators': [10, 50, 100],
-                },
-               "AdaBoostClassifier": {
-               'n_estimators': [50, 100, 150],
-               'learning_rate': [0.01, 0.1, 1.0, 1.5]
-                },
-               "XGBClassifier": {
-               'n_estimators': [50, 100, 200],
-                }
-              }
 ```
+**🌍 Usage**
+
+* Open your browser and go to http://127.0.0.1:5000.
+* Fill in details like passenger class, age, fare, gender, and embarkation.
+* Click on Predict Survival to get an instant prediction.
+
+**🤖 Future Enhancements**
+
+* Add More Models: Incorporate advanced models like XGBoost and CatBoost for improved accuracy.
+* User Authentication: Add user login to save individual predictions.
+* Enhanced UI/UX: Improve the frontend with better design and interactive visualizations.
+
+**📝 License**
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+**🎉 Thank you for checking out this project! 🎉**
+
+Feel free to open an issue or pull request if you'd like to contribute.
