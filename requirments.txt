@@ -3,6 +3,4 @@ numpy
 seaborn
 matplotlib
 scikit-learn
-
-pickle
 -e .
