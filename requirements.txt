@@ -4,4 +4,8 @@ seaborn
 matplotlib
 scikit-learn
 gunicorn
+flask
+render_template
+request
+pickle
 -e .
