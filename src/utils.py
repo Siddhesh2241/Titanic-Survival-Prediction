@@ -52,7 +52,13 @@ def evaluate_models(X_train, y_train,X_test,y_test,models,param):
 
 def load_object(file_path):
      try:
-         with open(file_path,"rb") as file_obj:
+         BASE_DIR = os.getcwd()
+         model_path = os.path.join(BASE_DIR, file_path)
+
+         if not os.path.exists(model_path):
+            raise FileNotFoundError(f"Model file not found at: {model_path}")
+
+         with open(model_path,"rb") as file_obj:
              return pickle.load(file_obj)
      
      except Exception as e:
