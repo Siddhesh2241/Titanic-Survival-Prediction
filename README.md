@@ -53,6 +53,10 @@ project_root/
 
 ![Streamlit_Prediction](Images/Stream.png)
 
+**📊 Power Bi Dashboard**
+
+![Power Bi Dashboard](Power Bi/Titanic_dashboard.JPG)
+
 **📦 Getting Started**
 
 **Prerequisites**
