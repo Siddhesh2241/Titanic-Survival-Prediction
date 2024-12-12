@@ -55,7 +55,7 @@ project_root/
 
 **📊 Power Bi Dashboard**
 
-![Power Bi Dashboard](Power Bi/Titanic_dashboard.JPG)
+![Power Bi Dashboard](Power_Bi/Titanic_dashboard.JPG)
 
 **📦 Getting Started**
 
