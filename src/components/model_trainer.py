@@ -1,7 +1,7 @@
 import os
 import sys
 from dataclasses import dataclass
-
+import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
@@ -27,10 +27,10 @@ class ModelTrainer:
         try:
             logging.info("Spliting training and test input data")
             X_train,y_train,X_test,y_test = (
-                train_array[:,:-1],
-                train_array[:,-1],
-                test_array[:,:-1],
-                test_array[:,-1]
+                np.delete(train_array,1,axis=1), 
+                train_array[:,1],                
+                np.delete(test_array,1,axis=1),  
+                test_array[:1]
             )
 
             models = {
